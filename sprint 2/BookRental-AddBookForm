@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Add Books</title>
+    </head>
+    <body>
+        <script language = "Javascript">
+        function validate()
+        {
+            var Toy_Name = document.getElementById("name").value;
+            var Toy_Type = document.getElementById("type").value;
+            var Quantity = parseInt(document.getElementById("quantity").value);
+            var Price = parseInt(document.getElementById("price").value);
+            var Amount = parseInt(document.getElementById("amt").value);
+            
+            if(/^([a-zA-Z0-9_-]){3,}$/.test(Toy_Name))
+                alert("Name Ok");
+            else
+                alert("Name Not Ok");
+
+            if(/^([a-zA-Z0-9_-]){5,}$/.test(Toy_Type))
+                alert("Type Ok");
+             else
+                alert("Type Not Ok");
+
+            if(!isNaN(Quantity) && Quantity>0)
+                alert("Quantity Ok");
+            else
+                alert("Quantity Not Ok");
+
+            if(!isNaN(Price) && Price>0)
+                alert("Price Ok");
+            else
+                alert("Price Not Ok");
+
+            if(Amount>=5)
+                alert("Amount Ok");
+            else
+                alert("Amount Not Ok");
+        </script>
+        <h2>
+            <span style="background-color: #000080; color: #ff6600;">Add Books</span>
+        </h2>
+        <table>
+            <tr><td>Book Name</td><td><input type="text" id="name"/></td></tr>
+            <tr><td>Book Type</td><td><input type="text" id="type"/></td></tr>
+            <tr>
+                <td>Min-Age</td>
+                <td>
+                    <select>
+                        <option value="00">0</option>
+                        <option value="01">1</option>
+                        <option value="02">2</option>
+                        <option value="03">3</option>
+                        <option value="04">4</option>
+                        <option value="05">5</option>
+                        <option value="06">6</option>
+                        <option value="07">7</option>
+                        <option value="08">8</option>
+                        <option value="09">9</option>
+                        <option value="10">10</option>
+                        <option value="11">11</option>
+                        <option value="12">12</option>
+                    </select>
+                </td>
+            </tr>
+            <tr>
+                <td>Max-Age</td>
+                <td>
+                    <select>
+                        <option value="00">0</option>
+                        <option value="01">1</option>
+                        <option value="02">2</option>
+                        <option value="03">3</option>
+                        <option value="04">4</option>
+                        <option value="05">5</option>
+                        <option value="06">6</option>
+                        <option value="07">7</option>
+                        <option value="08">8</option>
+                        <option value="09">9</option>
+                        <option value="10">10</option>
+                        <option value="11">11</option>
+                        <option value="12">12</option>
+                    </select>
+                </td>
+            </tr>
+            <tr><td>Price</td><td><input type="text" id="price"/></td></tr>
+            <tr><td>Quantity Available in Stock</td><td><input type="text" id="quantity"/></td></tr>
+            <tr><td>Rental amount per day</td><td><input type="text" id="amt"/></td></tr>
+            <tr><td>&nbsp;</td></tr>
+            <tr><td></td><td><input type="submit" value="Submit" onclick="validate()" /></td></tr>
+        </table>
+    </body>
+</html>
