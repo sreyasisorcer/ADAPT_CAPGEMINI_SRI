@@ -55,3 +55,4 @@
             <tr><td></td><td><input type="button" onclick="ShowRent()" value="Submit Query" /></td></tr>
         </table>
     </body>
+</html>
