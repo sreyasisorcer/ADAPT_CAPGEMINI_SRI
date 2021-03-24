@@ -1,0 +1,7 @@
+alter session set current_schema=bank;
+SET heading OFF;
+select bsa.account_no,bt1.trans_amt from bank_sb_account bsa,bank_transaction bt1
+where bsa.account_no=bt1.trans_acc_no
+and bt1.trans_type='DB'
+and bt1.trans_amt >(select avg(bt2.trans_amt)from bank_transaction bt2 
+where bt2.trans_acc_no=bt1.trans_acc_no);
