@@ -1,0 +1,7 @@
+alter session set current_schema=bank;
+SET heading OFF;
+select * from bank_transaction bt
+where bt.trans_acc_no in
+(select account_no from bank_rd_account bra
+where bra.rd_cust_id in
+(select cust_id from bank_cust_contact where cust_state='Tamilnadu'));
