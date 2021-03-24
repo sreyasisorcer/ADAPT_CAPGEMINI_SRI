@@ -1,5 +1,5 @@
 select bfa.account_no,bc.cust_fname,bc.cust_lname
 from bank_customer bc,bank_fd_account bfa
 where bc.cust_id=bfa.cust_id
-and ((bfa.initial_amt=(select max(initial_amt)from bank_fd_account)
-or (bfa.initial_amt=(select min(initial_amt)from bank_fd_account));
+and (bfa.initial_amt=(select max(initial_amt)from bank_fd_account)
+or bfa.initial_amt=(select min(initial_amt)from bank_fd_account));
