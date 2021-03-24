@@ -1,0 +1,6 @@
+alter session set current_schema=bank;
+SET heading OFF;
+select account_no from bank_sb_account bsa
+where not exists 
+(select trans_acc_no from bank_transaction bt
+where bsa.account_no=bt.trans_acc_no);
