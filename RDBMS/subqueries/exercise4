@@ -1,0 +1,11 @@
+alter session set current_schema=bank;
+SET heading OFF;
+select cust_id,cust_fname from bank_customer bc
+where not exists (select cust_id from bank_cust_contact bcc
+where bcc.contact_type='OFFICE' and bcc.cust_id=bc.cust_id)
+and bc.cust_type='IND';
+
+
+
+
+/* result requied here is wrong */
